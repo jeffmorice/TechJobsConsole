@@ -119,15 +119,20 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            foreach (Dictionary<string, string> job in someJobs)
+            if (someJobs.Count > 0)
             {
-                Console.WriteLine("*****");
-                foreach (KeyValuePair<string, string> field in job)
+                Console.WriteLine("\nThese records match your search:\n");
+                foreach (Dictionary<string, string> job in someJobs)
                 {
-                    Console.WriteLine(field.Key + ": " + field.Value);
+                    Console.WriteLine("*****");
+                    foreach (KeyValuePair<string, string> field in job)
+                    {
+                        Console.WriteLine(field.Key + ": " + field.Value);
+                    }
+                    Console.WriteLine("*****\n");
                 }
-                Console.WriteLine("*****\n");
             }
+            else { Console.WriteLine("\nNo records matched that term."); }
         }
     }
 }
