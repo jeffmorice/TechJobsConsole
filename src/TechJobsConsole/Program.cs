@@ -121,15 +121,15 @@ namespace TechJobsConsole
         {
             if (someJobs.Count > 0)
             {
-                Console.WriteLine("\nThese records match your search:\n");
+                Console.WriteLine("\nThese records match your search:");
                 foreach (Dictionary<string, string> job in someJobs)
                 {
-                    Console.WriteLine("*****");
+                    Console.WriteLine("\n*****");
                     foreach (KeyValuePair<string, string> field in job)
                     {
                         Console.WriteLine(field.Key + ": " + field.Value);
                     }
-                    Console.WriteLine("*****\n");
+                    Console.WriteLine("*****");
                 }
             }
             else { Console.WriteLine("\nNo records matched that term."); }
